@@ -1,8 +1,13 @@
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).resolve().parent))
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from .conversiones import convertir, operacion_alu
+from conversiones import convertir, operacion_alu
 app = FastAPI()
 
 app.add_middleware(
