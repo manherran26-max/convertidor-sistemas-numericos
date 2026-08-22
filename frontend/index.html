@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Sistemas Numéricos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Convertidor de Sistemas Numéricos</h1>
+
+    <div>
+        <label for="inputValue">Valor a convertir:</label>
+        <input type="text" id="inputValue" placeholder="Ingrese un valor">
+    </div>
+
+    <div>
+        <label for="baseEntrada">Base de entrada:</label>
+        <select id="baseEntrada">
+            <option value="2">Binario</option>
+            <option value="8">Octal</option>
+            <option value="10">Decimal</option>
+            <option value="16">Hexadecimal</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="tamanoPalabra">Tamaño de palabra:</label>
+        <select id="tamanoPalabra">
+            <option value="8">8 bits </option>
+            <option value="16">16 bits </option>
+            <option value="32">32 bits </option>
+            <option value="64">64 bits </option>
+        </select>
+    </div>
+
+    <div>
+        <button id="convertButton">Convertir</button>
+    </div>
+
+    <div>
+        <label for="binario">Binario:</label>
+        <input type="text" id="binario" readonly>
+    </div>
+
+    <div>
+        <label for="octal">Octal:</label>
+        <input type="text" id="octal" readonly>
+    </div>
+
+    <div>
+        <label for="decimal">Decimal:</label>
+        <input type="text" id="decimal" readonly>
+    </div>
+
+    <div>
+        <label for="hexadecimal">Hexadecimal:</label>
+        <input type="text" id="hexadecimal" readonly>
+    </div>
+        <h1>Simulacion ALU</h1>
+    <div>
+        <select id="operacion">
+            <option value="AND">AND</option>
+            <option value="OR">OR</option>
+            <option value="XOR">XOR</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="operando1">Operando A:</label>
+        <input type="text" id="operando1" placeholder="Ej: 1010">
+
+        <label for="operando2">Operando B:</label>
+        <input type="text" id="operando2" placeholder="Ej: 1100">
+    </div>
+
+    <div>
+        <button id="ejecutarALU">Ejecutar ALU</button>
+    </div>
+
+    <div>
+        <label for="resultadoALU">Resultado:</label>
+        <input type="text" id="resultadoALU" readonly>
+    </div>
+
+    <script src="convert.js"></script>
+</body>
+</html>
