@@ -1,7 +1,7 @@
-// Si estás en local usa la URL local, si no, usa una ruta relativa (misma app en Vercel)
+// Apunta a la carpeta /api tanto en local como en Vercel
 const API_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" 
-    ? "http://127.0.0.1:8000" 
-    : "";
+    ? "http://127.0.0.1:8000/api" 
+    : "/api";
 
 document.getElementById("convertButton").addEventListener("click", async function () {
     const valor = document.getElementById("inputValue").value.trim();
@@ -14,6 +14,7 @@ document.getElementById("convertButton").addEventListener("click", async functio
     }
 
     try {
+        // La URL final será /api/convertir
         const respuesta = await fetch(`${API_URL}/convertir`, {
             method: "POST",
             headers: {
@@ -55,6 +56,7 @@ document.getElementById("ejecutarALU").addEventListener("click", async function 
     }
 
     try {
+        // La URL final será /api/alu
         const respuesta = await fetch(`${API_URL}/alu`, {
             method: "POST",
             headers: {
