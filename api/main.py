@@ -45,3 +45,13 @@ def ejecutar_alu(datos: DatosALU):
         datos.operando2,
         datos.operacion
     )
+
+@app.get("/")
+
+def read_index():
+
+    index_path = BASE_DIR.parent / "index.html"
+
+    return FileResponse(index_path)
+
+app.mount("/", StaticFiles(directory=str(BASE_DIR.parent)), name="static")
