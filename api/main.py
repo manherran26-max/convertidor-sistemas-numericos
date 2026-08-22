@@ -34,6 +34,7 @@ class DatosALU(BaseModel):
     operacion: str
 
 @app.post("/convertir")
+@app.post("/api/convertir")
 def convertir_numero(datos: DatosConversion):
 
     return convertir(
@@ -43,6 +44,7 @@ def convertir_numero(datos: DatosConversion):
     )
 
 @app.post("/alu")
+@app.post("/api/alu")
 def ejecutar_alu(datos: DatosALU):
 
     return operacion_alu(

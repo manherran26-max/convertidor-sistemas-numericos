@@ -1,19 +1,15 @@
 {
   "rewrites": [
     {
+      "source": "/api/(.*)",
+      "destination": "/api/main.py"
+    },
+    {
       "source": "/convertir",
       "destination": "/api/main.py"
     },
     {
       "source": "/alu",
-      "destination": "/api/main.py"
-    },
-    {
-      "source": "/docs",
-      "destination": "/api/main.py"
-    },
-    {
-      "source": "/openapi.json",
       "destination": "/api/main.py"
     }
   ]
