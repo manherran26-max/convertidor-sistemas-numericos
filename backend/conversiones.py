@@ -1,7 +1,3 @@
-# ==========================================
-# MAPEO HEXADECIMAL
-# ==========================================
-
 mapa_hexadecimal = {
     10: "A",
     11: "B",
@@ -31,11 +27,6 @@ valores_hexadecimales = {
 }
 
 
-# ==========================================
-# CUALQUIER BASE → DECIMAL
-# Teorema fundamental de la numeración
-# ==========================================
-
 def base_a_decimal(numero, base):
 
     numero = numero.upper()
@@ -62,12 +53,6 @@ def base_a_decimal(numero, base):
 
     return decimal
 
-
-# ==========================================
-# DECIMAL → CUALQUIER BASE
-# Divisiones sucesivas
-# ==========================================
-
 def decimal_a_base(decimal, base):
 
     residuos = []
@@ -92,11 +77,6 @@ def decimal_a_base(decimal, base):
 
     return "".join(residuos)
 
-
-# ==========================================
-# CONVERSIÓN COMPLETA
-# ==========================================
-
 def convertir(valor, base, bits):
 
     decimal = base_a_decimal(valor, base)
@@ -106,7 +86,6 @@ def convertir(valor, base, bits):
             "error": "El valor ingresado no es válido para la base seleccionada."
         }
 
-    # Máximo permitido
     maximo = (2 ** bits) - 1
 
     if decimal > maximo:
@@ -115,19 +94,15 @@ def convertir(valor, base, bits):
             "maximo": maximo
         }
 
-    # Conversión
     binario = decimal_a_base(decimal, 2)
     octal = decimal_a_base(decimal, 8)
     hexadecimal = decimal_a_base(decimal, 16)
 
-    # Padding binario
     binario = binario.zfill(bits)
 
-    # Padding octal
     digitos_octal = (bits + 2) // 3
     octal = octal.zfill(digitos_octal)
 
-    # Padding hexadecimal
     digitos_hexadecimal = bits // 4
     hexadecimal = hexadecimal.zfill(digitos_hexadecimal)
 

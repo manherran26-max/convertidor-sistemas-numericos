@@ -3,11 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from conversiones import convertir, operacion_alu
-
-
 app = FastAPI()
 
-# Configuración CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -16,31 +13,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ==========================================
-# DATOS DEL CONVERSOR
-# ==========================================
-
 class DatosConversion(BaseModel):
 
     valor: str
     base: int
     bits: int
 
-
-# ==========================================
-# DATOS DE LA ALU
-# ==========================================
-
 class DatosALU(BaseModel):
 
     operando1: str
     operando2: str
     operacion: str
-
-
-# ==========================================
-# ENDPOINT CONVERSOR
-# ==========================================
 
 @app.post("/convertir")
 def convertir_numero(datos: DatosConversion):
@@ -50,11 +33,6 @@ def convertir_numero(datos: DatosConversion):
         datos.base,
         datos.bits
     )
-
-
-# ==========================================
-# ENDPOINT ALU
-# ==========================================
 
 @app.post("/alu")
 def ejecutar_alu(datos: DatosALU):
