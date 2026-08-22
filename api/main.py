@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-sys.path.append(str(Path(__file__).resolve().parent))
+BASE_DIR = Path(__file__).resolve().parent
 sys.path.append(str(BASE_DIR))
 
 from fastapi import FastAPI
